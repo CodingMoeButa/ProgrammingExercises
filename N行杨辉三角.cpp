@@ -20,7 +20,7 @@ int main(){
 	
 	for( i = 0 ; i < n ; i++ ){
 		for( j = 0 ; j <= i ; j++ ){
-			cout<<setw(4)<<a[i][j]<<" ";
+			cout<<setw(5)<<a[i][j];
 		}
 		cout<<endl;
 	}
