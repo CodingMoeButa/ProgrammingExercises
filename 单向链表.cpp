@@ -1,6 +1,6 @@
 /*
 	Title: 单向链表 
-	Version: 2.0.0
+	Version: 2.1.0
 	Author: Ricky
 	Github: https://github.com/ricky50575/ProgrammingExercises
 	Website: http://lightnovel.moe/
@@ -101,6 +101,17 @@ int sizeofLink(node* entry){//获取指定链表的数据节点数
 	return size;
 } 
 
+void deleteLink(node* entry){//删除链表
+	node* target = entry;
+	node* last;
+	
+	while(target != NULL){
+		last = target;
+		target = target->next;
+		delete last;//释放目标节点
+	}
+} 
+
 int main(){//主函数用于测试程序 
 	int i;
 	
@@ -135,7 +146,12 @@ int main(){//主函数用于测试程序
 	}
 	printf("\n");
 	
-	printf("%d",sizeofLink(entry));//取链表长度 
+	printf("%d\n",sizeofLink(entry));//取链表长度 
+	
+	deleteLink(entry);//删除链表
+	for(i = 1; i <= 4; i++){
+		printf("%d ",readNode(entry, i)); 
+	}
 	
 	return 0;
 }
