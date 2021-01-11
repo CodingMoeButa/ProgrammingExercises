@@ -1,6 +1,6 @@
 /*
 	Title: 单向链表 
-	Version: 2.2.0
+	Version: 2.2.1
 	Author: Ricky
 	Github: https://github.com/ricky50575/ProgrammingExercises
 	Website: http://lightnovel.moe/
@@ -16,14 +16,14 @@ class LinkList{
 			node* next;//节点的指针域，为指向下一个节点的指针
 		};
 		
-		node* entry;//创建入口节点
-		node* head;//创建起始节点
-		node* tail;//创建终末节点
+		node* entry = new node;//创建入口节点
+		node* head = new node;//创建起始节点
+		node* tail = new node;//创建终末节点
 		
 	public:
 		LinkList(){//创建一个空链表，只包含控制节点（入口节点、起始节点、终末节点），不包含数据节点
 			tail->next = NULL;//终末节点不存在下一个节点，故终末节点的指针域赋空值 
-			head->next = tail;//空链表的起始节点的下一个节点是终末节点 
+			head->next = tail;//空链表的起始节点的下一个节点是终末节点
 			entry->next = head;//入口节点的下一个节点是起始节点 
 		}
 		
